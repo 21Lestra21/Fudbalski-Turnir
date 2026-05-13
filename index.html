@@ -1,89 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football Live</title>
+<title>Fudbal Uživo</title>
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial;
-background:#0b0f19;
-color:white;
 }
 
-header{
-background:#111827;
-padding:20px;
+body{
+background:#05070d;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO SEKCIJA */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(to right, rgba(0,0,0,0.92) 35%, rgba(0,0,0,0.45)),
+url('stadium.png');
+
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding-left:80px;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-font-size:30px;
+font-size:40px;
 font-weight:bold;
-color:#00ff99;
+color:#8dff00;
 }
 
 .menu{
 display:flex;
-gap:20px;
+gap:40px;
 }
 
 .menu a{
-color:white;
 text-decoration:none;
-}
-
-.container{
-padding:30px;
-}
-
-.league{
-margin-bottom:40px;
-}
-
-.league-title{
-font-size:25px;
-margin-bottom:20px;
-color:#00ff99;
-}
-
-.match{
-background:#111827;
-padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+color:white;
+font-size:18px;
 transition:0.3s;
 }
 
-.match:hover{
-transform:scale(1.02);
+.menu a:hover{
+color:#8dff00;
 }
 
-.teams{
-font-size:20px;
+/* HERO TEXT */
+
+.content{
+max-width:700px;
 }
 
-.score{
-font-size:28px;
+.content h1{
+font-size:95px;
+line-height:95px;
+font-weight:900;
+text-transform:uppercase;
+}
+
+.green{
+color:#8dff00;
+}
+
+.content p{
+margin-top:25px;
+font-size:24px;
+color:#d0d0d0;
+}
+
+/* BUTTONS */
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+}
+
+.btn{
+padding:18px 40px;
+border:none;
+border-radius:14px;
+font-size:18px;
 font-weight:bold;
-color:#00ff99;
+cursor:pointer;
+transition:0.3s;
 }
 
 .live{
-background:red;
-padding:5px 10px;
-border-radius:8px;
-font-size:12px;
+background:#8dff00;
+color:black;
+}
+
+.live:hover{
+transform:scale(1.05);
+}
+
+.dark{
+background:transparent;
+border:2px solid #8dff00;
+color:white;
+}
+
+.dark:hover{
+background:#8dff00;
+color:black;
+}
+
+/* LIVE MATCHES */
+
+.matches{
+padding:80px;
+background:#0b0f19;
+}
+
+.title{
+font-size:50px;
+margin-bottom:40px;
+color:#8dff00;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111827;
+padding:30px;
+border-radius:20px;
+transition:0.3s;
+border:1px solid rgba(141,255,0,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(141,255,0,0.2);
+}
+
+.league{
+font-size:15px;
+color:#8dff00;
+margin-bottom:15px;
+}
+
+.teams{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.score{
+font-size:55px;
 font-weight:bold;
+color:#8dff00;
+}
+
+.status{
+margin-top:15px;
+display:inline-block;
+background:red;
+padding:6px 14px;
+border-radius:10px;
+font-size:14px;
+font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+padding:30px;
+}
+
+.content h1{
+font-size:60px;
+line-height:60px;
+}
+
+nav{
+padding:20px;
+}
+
+.menu{
+display:none;
+}
+
+.title{
+font-size:35px;
+}
+
 }
 
 </style>
@@ -91,78 +226,125 @@ font-weight:bold;
 
 <body>
 
-<header>
-<div class="logo">⚽ Football Live</div>
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+⚽ Fudbal Uživo
+</div>
 
 <div class="menu">
-<a href="#">Home</a>
-<a href="#">Matches</a>
-<a href="#">Leagues</a>
-<a href="#">Stats</a>
+<a href="#">Početna</a>
+<a href="#">Utakmice</a>
+<a href="#">Lige</a>
+<a href="#">Tabela</a>
+<a href="#">Statistika</a>
+<a href="#">Kontakt</a>
 </div>
-</header>
 
-<div class="container">
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="content">
+
+<h1>
+PRATITE <span class="green">FUDBAL</span><br>
+UŽIVO!
+</h1>
+
+<p>
+Rezultati uživo. Statistika. Najbrže i najtačnije informacije.
+</p>
+
+<div class="buttons">
+
+<button class="btn live">
+⚡ UŽIVO UTAKMICE
+</button>
+
+<button class="btn dark">
+⭐ OMILJENI TIMOVI
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIVE MATCHES -->
+
+<section class="matches">
+
+<h2 class="title">
+🔴 UTAKMICE UŽIVO
+</h2>
+
+<div class="cards">
+
+<div class="card">
 
 <div class="league">
-<div class="league-title">🇪🇸 La Liga</div>
+LIGA ŠAMPIONA
+</div>
 
-<div class="match">
 <div class="teams">
-Barcelona vs Real Madrid
+Crvena zvezda vs Mančester Siti
 </div>
 
 <div class="score">
 2 - 1
 </div>
 
-<div class="live">
-LIVE
-</div>
-</div>
-
-<div class="match">
-<div class="teams">
-Atletico Madrid vs Sevilla
-</div>
-
-<div class="score">
-20:45
-</div>
+<div class="status">
+UŽIVO 85'
 </div>
 
 </div>
+
+<div class="card">
 
 <div class="league">
-<div class="league-title">🏴 Premier League</div>
+PREMIJER LIGA
+</div>
 
-<div class="match">
 <div class="teams">
-Arsenal vs Liverpool
+Arsenal vs Liverpul
 </div>
 
 <div class="score">
 1 - 1
 </div>
 
-<div class="live">
-LIVE
-</div>
+<div class="status">
+UŽIVO 63'
 </div>
 
-<div class="match">
+</div>
+
+<div class="card">
+
+<div class="league">
+LA LIGA
+</div>
+
 <div class="teams">
-Chelsea vs Manchester City
+Real Madrid vs Barselona
 </div>
 
 <div class="score">
-18:30
+20:45
 </div>
+
 </div>
 
 </div>
 
-</div>
+</section>
 
 </body>
 </html>
