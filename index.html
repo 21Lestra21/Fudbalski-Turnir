@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Football Live</title>
 
 <style>
@@ -9,50 +11,78 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0d1117;
+background:#0b0f19;
 color:white;
 }
 
 header{
-background:#161b22;
+background:#111827;
 padding:20px;
-text-align:center;
-font-size:35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
 font-weight:bold;
 color:#00ff99;
 }
 
-.matches{
-padding:30px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+.menu{
+display:flex;
 gap:20px;
 }
 
-.card{
-background:#161b22;
+.menu a{
+color:white;
+text-decoration:none;
+}
+
+.container{
+padding:30px;
+}
+
+.league{
+margin-bottom:40px;
+}
+
+.league-title{
+font-size:25px;
+margin-bottom:20px;
+color:#00ff99;
+}
+
+.match{
+background:#111827;
 padding:20px;
 border-radius:15px;
-box-shadow:0 0 10px rgba(0,255,153,0.2);
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 transition:0.3s;
 }
 
-.card:hover{
-transform:scale(1.03);
+.match:hover{
+transform:scale(1.02);
 }
 
 .teams{
-font-size:25px;
-margin-bottom:10px;
+font-size:20px;
 }
 
 .score{
-font-size:40px;
+font-size:28px;
+font-weight:bold;
 color:#00ff99;
 }
 
 .live{
-color:red;
+background:red;
+padding:5px 10px;
+border-radius:8px;
+font-size:12px;
 font-weight:bold;
 }
 
@@ -62,26 +92,74 @@ font-weight:bold;
 <body>
 
 <header>
-⚽ Football Live Scores
+<div class="logo">⚽ Football Live</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">Matches</a>
+<a href="#">Leagues</a>
+<a href="#">Stats</a>
+</div>
 </header>
 
-<div class="matches">
+<div class="container">
 
-<div class="card">
-<div class="live">LIVE</div>
-<div class="teams">Barcelona vs Real Madrid</div>
-<div class="score">2 - 1</div>
+<div class="league">
+<div class="league-title">🇪🇸 La Liga</div>
+
+<div class="match">
+<div class="teams">
+Barcelona vs Real Madrid
 </div>
 
-<div class="card">
-<div class="live">LIVE</div>
-<div class="teams">Arsenal vs Liverpool</div>
-<div class="score">1 - 1</div>
+<div class="score">
+2 - 1
 </div>
 
-<div class="card">
-<div class="teams">Bayern vs Dortmund</div>
-<div class="score">20:45</div>
+<div class="live">
+LIVE
+</div>
+</div>
+
+<div class="match">
+<div class="teams">
+Atletico Madrid vs Sevilla
+</div>
+
+<div class="score">
+20:45
+</div>
+</div>
+
+</div>
+
+<div class="league">
+<div class="league-title">🏴 Premier League</div>
+
+<div class="match">
+<div class="teams">
+Arsenal vs Liverpool
+</div>
+
+<div class="score">
+1 - 1
+</div>
+
+<div class="live">
+LIVE
+</div>
+</div>
+
+<div class="match">
+<div class="teams">
+Chelsea vs Manchester City
+</div>
+
+<div class="score">
+18:30
+</div>
+</div>
+
 </div>
 
 </div>
